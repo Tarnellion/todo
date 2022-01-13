@@ -1,0 +1,25 @@
+{
+    "name": "todo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "server": "nodemon app.js",
+        "client": "npm run start --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\""
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.24.0",
+        "cors": "^2.8.5",
+        "fastify": "^3.25.3",
+        "fastify-cors": "^6.0.2",
+        "mysql": "^2.18.1"
+    },
+    "devDependencies": {
+        "concurrently": "^7.0.0",
+        "nodemon": "^2.0.15"
+    }
+}
