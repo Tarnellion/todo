@@ -1,11 +1,10 @@
 const fastify = require('fastify')
 const mysql = require('mysql')
 
-
 const app = fastify();
-app.register(require('fastify-cors'), {
-    // put your options here
-})
+
+app.register(require('fastify-cors'), {})
+app.register(require('fastify-xml-body-parser'), {})
 
 const conn = mysql.createConnection({
     host: 'localhost',
@@ -38,4 +37,10 @@ conn.query('SELECT * FROM ToDoList', (err, result, field) => {
 })
 app.get('/', (req, res) => {
     res.send(dbData)
+})
+app.post('/', (req, res) => {
+    let data = [req.body.id, req.body.task, req.body.isDone]
+    conn.query('INSERT INTO `ToDoList`(`id`, `task`, `isDone`) VALUES (?,?,?)', data, (err, results, fields) => {
+        !err ? res.json(results) : res.json(err)
+    })
 })

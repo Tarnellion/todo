@@ -13,9 +13,9 @@
     "license": "ISC",
     "dependencies": {
         "axios": "^0.24.0",
-        "cors": "^2.8.5",
         "fastify": "^3.25.3",
         "fastify-cors": "^6.0.2",
+        "fastify-xml-body-parser": "^2.0.0",
         "mysql": "^2.18.1"
     },
     "devDependencies": {
