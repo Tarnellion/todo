@@ -3,4 +3,4 @@
 node_modules/
 jspm_packages/
 client/node_modules/*
-!client/*
+!client/
