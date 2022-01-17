@@ -1,7 +1,7 @@
 const fastify = require('fastify')
 const mysql = require('mysql')
 
-const app = fastify();
+const app = fastify({ logger: true });
 
 app.register(require('fastify-cors'), {})
 app.register(require('fastify-xml-body-parser'), {})
@@ -29,7 +29,7 @@ conn.connect(err => {
 //     console.log("Подключение закрыто");
 // });
 
-app.listen(8000, () => { console.log('app started...'); })
+app.listen(8000, () => { console.log('app str...'); })
 
 let dbData;
 conn.query('SELECT * FROM ToDoList', (err, result, field) => {
