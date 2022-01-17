@@ -22,13 +22,6 @@ conn.connect(err => {
     }
 })
 
-// conn.end(err => {
-//     if (err) {
-//         return console.log("Ошибка: " + err.message);
-//     }
-//     console.log("Подключение закрыто");
-// });
-
 app.listen(8000, () => { console.log('app str...'); })
 
 let dbData;
